@@ -1,0 +1,48 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'monitoring-service'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['monitoring-service:9090']
+
+  - job_name: 'log-service'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['log-service:3998']
+
+  - job_name: 'auth-service'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['auth-service:3999']
+      
+  - job_name: 'user-service'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['user-service:4000']
+      
+  - job_name: 'order-service'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['order-service:4001']
+      
+  - job_name: 'restaurant-service'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['restaurant-service:4002']
+      
+  - job_name: 'ticket-service'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['ticket-service:4003']
+
+  - job_name: 'review-service'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['review-service:4004']
+      
+  - job_name: 'nginx-rp'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['nginx-prometheus-exporter:9113']
